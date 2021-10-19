@@ -1,0 +1,53 @@
+<!--
+    file name: Assignment 2
+    student name: Joshua Soriano
+    student id: 301 154 852
+    date: Friday, October 18, 2021
+-->
+
+<!--Header-->
+<%- include ../partials/header.ejs %>
+
+    <!--navigation bar and logo-->
+    <!--Main content-->
+    <%- include ../partials/nav_bar.ejs %>
+    <main class="container">
+        <div class="row">
+            <div class="offset-md-1 col-md-11">
+                <h1><%= title %></h1>
+                <br>
+                <table class="table table-bordered table-striped table-hover">
+                    <!-- Header Row-->
+                    <tr>
+                        <th class="text-center">Contact Name</th>
+                        <th class="text-center">Contact Number</th>
+                        <th class="text-center">Email Address</th>
+                        <th class="text-center"></th>
+                        <th class="text-center"></th>
+                    </tr>
+
+                    <!-- row template-->
+                    <% for(let count = 0; count < BusinessList.length; count++) { %>
+                    <tr>
+                        <td class="text-center"><%= BusinessList[count].name %></td>
+                        <td class="text-center"><%= BusinessList[count].number %></td>
+                        <td class="text-center"><%= BusinessList[count].email %></td>
+                        <td class="text-center">
+                            <a href="/business-list/edit/<%= BusinessList[count]._id %>" class="btn btn-primary">
+                            <i class="fas fa-edit alt"></i> Edit</a>
+                        </td>
+                        <td class="text-center">
+                            <a href="/business-list/delete/<%= BusinessList[count]._id %>" class="btn btn-danger">
+                            <i class="fas fa-trash-alt"></i> Delete</a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </div>
+        </div>
+    </main>
+
+
+<!--Footer-->
+<%- include ../partials/footer.ejs %>
+    
+

@@ -1,0 +1,47 @@
+<!--
+    file name: Assignment 1
+    student name: Joshua Soriano
+    student id: 301 154 852
+    date: Friday, October 18, 2021
+-->
+
+<!--Header-->
+<%- include partials/header.ejs %>
+
+
+
+
+    
+    <!--navigation bar and logo-->
+    <!--Main content-->
+    <%- include partials/nav_bar.ejs %>
+    <main class="content">
+        <div class="col-md-offset-3 col-md-6">
+            <h1><%= title %></h1>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header Row-->
+                <tr>
+                    <th class="text-center">Contact Name</th>
+                    <th class="text-center">Contact Number</th>
+                    <th class="text-center">Email Address</th>
+                </tr>
+
+                <!-- row template-->
+
+                <% for(let count = 0; count < InfoList.length; count++) { %>
+                    <tr>
+                        <!--CHANGE THIS LATER TO BE BUSINESS CONTACT-->
+                        <td class="text-center"><%= InfoList[count].username %></td>
+                        <td class="text-center"><%= InfoList[count].password %></td>
+                        <td class="text-center"><%= InfoList[count].email %></td>
+                    </tr>
+                <% } %>
+            
+    </main>
+
+
+<!--Footer-->
+<%- include partials/footer.ejs %>
+    
+

@@ -1,0 +1,63 @@
+<!--
+    file name: Assignment 2
+    student name: Joshua Soriano
+    student id: 301 154 852
+    date: Friday, October 18, 2021
+-->
+
+<!--Header-->
+<%- include ../partials/header.ejs %>
+    
+    <!--navigation bar and logo-->
+    <!--Main content for add page-->
+    <%- include ../partials/nav_bar.ejs %>
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-3 col-md-6">
+                <h1><%= title %></h1>
+                <form class="form" method="POST">
+                    <div class="form-group">
+                        <label for="nameTextField">Contact's Name</label>
+                        <input type="text" class="form-control"
+                        id="nameTextField"
+                        placeholder="Enter the Contact's name"
+                        name="name"
+                        value="<%= business.name %>"
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <label for="numberTextField">Contact's Number</label>
+                        <input type="text" class="form-control"
+                        id="numberTextField"
+                        placeholder="Enter the Contact's number"
+                        name="number"
+                        value="<%= business.number %>"
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailTextField"></label>
+                        <input type="text" class="form-control"
+                        id="emailTextField"
+                        placeholder="Enter the Contact's email"
+                        name="email"
+                        value="<%= business.email %>"
+                        required>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-edit"></i> Edit</button>
+                    
+                        <a href="/business-list" class="btn btn-warning">
+                            <i class="fas fa-undo"></i> Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+<!--Footer-->
+<%- include ../partials/footer.ejs %>
+    
+
